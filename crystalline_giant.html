@@ -15,7 +15,7 @@
         font-size: 40px;
       }
       .buttonSelected {
-        background-color: #ff0000;
+        background-color: #504a4a;
       }
     </style>
   </head>
@@ -32,7 +32,12 @@
     src="https://www.1999.co.jp/itbig69/10695008.jpg"
     /> -->
     <h2>
-      <button type="button" onclick="collected()" id="vigilanceButton">
+      <button
+        type="button"
+        onclick="collected(this)"
+        id="vigilanceButton"
+        class="hit"
+      >
         <img
           id="vigilanceImg"
           src="https://vignette.wikia.nocookie.net/magicarena/images/6/61/Icon_Vigilance.png/revision/latest?cb=20180820183002"
@@ -41,7 +46,12 @@
         />
       </button>
 
-      <button type="button" onclick="collected()" id="flyingButton">
+      <button
+        type="button"
+        onclick="collected(this)"
+        id="flyingButton"
+        class="hit"
+      >
         <img
           id="flyingImg"
           src="https://vignette.wikia.nocookie.net/magicarena/images/b/b0/Icon_Flying.png/revision/latest?cb=20180820182954"
@@ -49,8 +59,13 @@
           alt="Flying Counter"
         />
       </button>
-      
-      <button type="button" onclick="collected()" id="deathtouchButton">
+
+      <button
+        type="button"
+        onclick="collected(this)"
+        id="deathtouchButton"
+        class="hit"
+      >
         <img
           id="deathtouchImg"
           src="https://vignette.wikia.nocookie.net/magicarena/images/d/db/Icon_Deathtouch.png/revision/latest?cb=20180820182952"
@@ -59,16 +74,27 @@
         />
       </button>
 
-      <button type="button" onclick="collected()" id="firstStrikeButton">
+      <button
+        type="button"
+        onclick="collected(this)"
+        id="firstStrikeButton"
+        class="hit"
+      >
         <img
           id="firstStrikeImg"
           src="https://vignette.wikia.nocookie.net/magicarena/images/c/cf/Icon_First_Strike.png/revision/latest?cb=20180820182954"
           title="First Strike; it longs now for Deathtouch"
           alt="First Strike Counter"
+          background-color="red"
         />
       </button>
 
-      <button type="button" onclick="collected()" id="trampleButton">
+      <button
+        type="button"
+        onclick="collected(this)"
+        id="trampleButton"
+        class="hit"
+      >
         <img
           id="trampleImg"
           src="https://vignette.wikia.nocookie.net/magicarena/images/c/c7/Icon_Trample.png/revision/latest?cb=20180820183001"
@@ -76,9 +102,14 @@
           alt="Trample Counter"
         />
       </button>
-    </h2>    
+    </h2>
     <h3>
-      <button type="button" onclick="collected()" id="lifelinkButton">
+      <button
+        type="button"
+        onclick="collected(this)"
+        id="lifelinkButton"
+        class="hit"
+      >
         <img
           id="lifelinkImg"
           src="https://vignette.wikia.nocookie.net/magicarena/images/1/1f/Icon_Lifelink.png/revision/latest?cb=20180820182959"
@@ -87,7 +118,12 @@
         />
       </button>
 
-      <button type="button" onclick="collected()" id="hexproofButton">
+      <button
+        type="button"
+        onclick="collected(this)"
+        id="hexproofButton"
+        class="hit"
+      >
         <img
           id="hexproofImg"
           src="https://vignette.wikia.nocookie.net/magicarena/images/2/2a/Icon_Hexproof.png/revision/latest?cb=20180820182955"
@@ -96,7 +132,12 @@
         />
       </button>
 
-      <button type="button" onclick="collected()" id="menaceButton">
+      <button
+        type="button"
+        onclick="collected(this)"
+        id="menaceButton"
+        class="hit"
+      >
         <img
           id="menaceImg"
           src="https://vignette.wikia.nocookie.net/magicarena/images/0/0c/Icon_Menace.png/revision/latest?cb=20180820183000"
@@ -105,7 +146,12 @@
         />
       </button>
 
-      <button type="button" onclick="collected()" id="pluseOneButton">
+      <button
+        type="button"
+        onclick="collected(this)"
+        id="pluseOneButton"
+        class="hit"
+      >
         <img
           id="plusOneImg"
           src="https://vignette.wikia.nocookie.net/magicarena/images/a/ad/Icon_Embalm.png/revision/latest?cb=20180823173614"
@@ -114,7 +160,12 @@
         />
       </button>
 
-      <button type="button" onclick="collected()" id="reachButton">
+      <button
+        type="button"
+        onclick="collected(this)"
+        id="reachButton"
+        class="hit"
+      >
         <img
           id="reachImg"
           src="https://vignette.wikia.nocookie.net/magicarena/images/5/5e/Icon_Reach.png/revision/latest?cb=20180820183000"
@@ -161,29 +212,75 @@
         Vigilance: "vigilanceButton",
         "+1/+1": "pluseOneButton",
       };
+      var counterItemArray = {
+        flyingButton: "Flying",
+        firstStrikeButton: "First-Strike",
+        deathtouchButton: "Deathtouch",
+        hexproofButton: "Hexproof",
+        lifelinkButton: "Lifelink",
+        menaceButton: "Menace",
+        reachButton: "Reach",
+        trampleButton: "Trample",
+        vigilanceButton: "Vigilance",
+        pluseOneButton: "+1/+1",
+      };
 
       const counterSetCopy = [...counterSet.keys()];
 
       function reset() {
         counterSet = new Set(counterSetCopy);
         showResults.innerHTML = "Click the Button ☝🏻 to Get a Counter!";
+        resetButtons();
       }
+      
+      function collected(theElement) {
+        const btnElemId = theElement.id;
+        // console.log(btnElemId);
+        const btnClicked = document.getElementById(btnElemId);
+        const btnAlt = btnClicked
+          .getElementsByTagName("img")[0]
+          .getAttribute("alt");
+        btnClicked.classList.toggle("buttonSelected");
+        //console.log("button class is " + btnClicked.className);
+        //counterItemArray
+        let itemName = counterItemArray[btnElemId];
+        console.log(itemName);
+        if (btnClicked.classList.contains("buttonSelected")) {
+          addOrDeleteSetItem(counterSet, itemName, "delete");
+          showResults.innerHTML = "You gave it the " + btnAlt;
+        } else {
+          addOrDeleteSetItem(counterSet, itemName, "add");
+          showResults.innerHTML = "You took the " + btnAlt + " away";
+        }
+      }
+
+      function addOrDeleteSetItem(theSet, theItem, addOrDelete){
+        if (addOrDelete == "add") {
+          theSet.add(theItem);          
+        }
+        else if(addOrDelete == "delete") {
+          theSet.delete(theItem);
+        }
+      } 
+
+      //when clicked, activates both the buttonSelected and pickedItem
 
       function grabAndDeleteRandomSetElem(aSet) {
         let sizeOfSet = aSet.size;
         if (sizeOfSet > 0) {
-          // console.log("Size of set: " + sizeOfSet);
+          //console.log("Size of set: " + sizeOfSet);
           let aSetAsArray = [...aSet.keys()];
-          // console.log("Array: " + aSetAsArray);
+          //console.log("Array: " + aSetAsArray);
           const startNum = 0;
           let randItem =
             Math.floor(Math.random() * (sizeOfSet - startNum)) + startNum;
-          // console.log("Rand Item Number: " +  randItem)
+          //console.log("Rand Item Number: " +  randItem)
           let pickedItem = aSetAsArray[randItem];
-          // console.log("I picked: " +  pickedItem);
+          //console.log("I picked: " +  pickedItem);
           aSet.delete(pickedItem);
           return pickedItem;
         } else {
+          //console.log("we should be done");
           return "You're done!";
         }
       }
@@ -197,72 +294,43 @@
         return pick;
       }
 
-      function rollChance() {
-        // var listOfCounterSet = ""
-        // counterSet.forEach(counter => {
-        //   listOfCounterSet = listOfCounterSet + counter + "<br/>";
-        //   }
-        // )
-        let theSelection = selectRandomFromSet(counterSet);
-        //counterButtonArray[theSelection];
-        // var selectedButton = document.getElementById(counterButtonArray[theSelection]);
-        // document.getElementById(counterButtonArray[theSelection]).classList.add("buttonSelected");
-        // var myTest = document.getElementById(counterButtonArray[theSelection]);
-        // console.log(myTest);
-        // selectedButton.className = "buttonSelected";
-        //selectedButton.classList.add("buttonSelected");
-
-        if (theSelection == "You're done!") {
-          showResults.innerHTML =
-            "You've got the last one! Click the Button 👇🏻 for your next Giant";
-        } else {
-          showResults.innerHTML = "You got the '" + theSelection + "' counter";
+      function resetButtons() {
+        let allButtons = document.querySelectorAll(".buttonSelected");
+        for (var index = 0; index < allButtons.length; index++) {
+          allButtons[index].classList.remove("buttonSelected");
         }
-        // document.getElementById(theSelection).classList.add("buttonSelected");
       }
 
-      // if(theSelection==="Flying"){
-      //   var fCounter = document.getElementById("flyingButton")
-      // };
-
-      // if(theSelection==="First Strike"){
-      //   var sCounter = document.getElementById("firstStrikeButton");
-      //   sCounter = style.color = "red";
-      // };
-
-      // if(theSelection==="Deathtouch"){
-      //   var dCounter = document.getElementById("deathtouchButton");
-      // };
-
-      // if(theSelection==="Hexproof"){
-      //   var hCounter = document.getElementById("hexproofButton");
-      // };
-
-      // if(theSelection==="Lifelink"){
-      //   var lCounter = document.getElementById("lifelinkButton");
-      // };
-
-      // if(theSelection==="Menace"){
-      //   var mCounter = document.getElementById("menaceButton");
-      // };
-
-      // if(theSelection==="Reach"){
-      //   var rCounter = document.getElementById("reachButton");
-      // };
-
-      // if(theSelection==="Trample"){
-      //   var tCounter = document.getElementById("trampleButton");
-      // };
-
-      // if(theSelection==="Vigilance"){
-      //   var vCounter = document.getElementById("vigilanceButton");
-      // };
-
-      // if(theSelection==="+1/+1"){
-      //   var oCounter = document.getElementById("pluseOneButton");};
-
-      // document.getElementById("demo").innerHTML = resultString + randResult;
-      // storyDiv.innerHTML = "You got the " + action + " counter";
+      function rollChance() {
+        let sizeOfSet = counterSet.size;
+        if (sizeOfSet > 0) {
+          let theSelection = selectRandomFromSet(counterSet);
+          let selectionCountNow = counterSet.size;
+          counterButtonArray[theSelection];
+          var selectedButton = document.getElementById(
+            counterButtonArray[theSelection]
+          );
+          document
+            .getElementById(counterButtonArray[theSelection])
+            .classList.add("buttonSelected");
+          var myTest = document.getElementById(
+            counterButtonArray[theSelection]
+          );
+          //console.log(myTest);
+          selectedButton.className = "buttonSelected";
+          selectedButton.classList.add("buttonSelected");
+          // if selectionCountNow > 0 then we tell them what they got
+          if (selectionCountNow > 0) {
+            showResults.innerHTML = "You got the " + theSelection + " Counter";
+          } else {
+            showResults.innerHTML =
+              "And the last one is the " + theSelection + " Counter!";
+          }
+        } else {
+          showResults.innerHTML =
+            "Thats all of them! Click the Reset button 👇🏻 for your next Giant";
+        }
+      }
     </script>
   </body>
 </html>
