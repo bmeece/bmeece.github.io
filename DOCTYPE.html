@@ -1,0 +1,69 @@
+<!DOCTYPE html> 
+<html> 
+  
+<head> 
+    <title>Try jQuery Online</title> 
+    <script src= 
+"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"> 
+  </script> 
+    <script> 
+        $(document).ready(function() { 
+            $("button").click(function() { 
+                //$("#d").trigger("reset"); 
+                //$("#d").get(0).reset(); 
+                $("#d")[0].reset() 
+            }); 
+        }); 
+    </script> 
+</head> 
+  
+<body> 
+    <center> 
+        <h1 style="color:green">GeeksforGeeks</h1> 
+        <h4>  
+        Click on "Submit" to submit and  
+          remaining resets to get form to original state.  
+        </h4> 
+        <form id="d" action="/cgi-bin/test.cgi" name="geek"> 
+            <table cellspacing="0" cellpadding="3" border="1"> 
+                <tr> 
+                    <td align="center">Username</td> 
+                    <td> 
+                        <input type="text" name="name" /> 
+                    </td> 
+                </tr> 
+                <tr> 
+                    <td align="center">Email</td> 
+                    <td> 
+                        <input type="text" name="name" /> 
+                    </td> 
+                </tr> 
+                <tr> 
+                    <td align="center">Password</td> 
+                    <td> 
+                        <input type="password" /> 
+                    </td> 
+                </tr> 
+                <tr> 
+                    <td align="center"></td> 
+                    <td> 
+                        <input type="submit" value="Submit" /> 
+                    </td> 
+                </tr> 
+                <tr> 
+                    <td align="center"></td> 
+                    <td> 
+                        <input type="reset" value="reset button" /> 
+                    </td> 
+                </tr> 
+            </table> 
+        </form> 
+        <br> 
+        <input type="button" 
+               value="reset() outside form" 
+               onclick="geek.reset();" /> 
+        <button>resetby jQuery</button> 
+    </center> 
+</body> 
+  
+</html> 

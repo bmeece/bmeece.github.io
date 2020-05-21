@@ -37,48 +37,27 @@
 <p id="demo"></p>
 <p><a href="index.html">Back to Homepage!</a></p>
 
-<script>
-function myFunction() {
-  var numSidesSelected = document.getElementById("sideSelector").value;
-  var resultString = "You rolled a "
-  let startNum = 1;
-  let randSides = Math.floor(Math.random() * (numSidesSelected - startNum + 1)) + startNum;
-  var randResult = randSides
-  if (numSidesSelected == 2){
-    resultString = "The coin was "
-    if (randSides == 1){
-        randResult = "Heads"
-    } else {
-        randResult = "Tails"
-    }
-  }
-  document.getElementById("demo").innerHTML = resultString + randResult;
-}
-</script>
-        <!--/*would be a button function*/-->
-        <!-- <span id="choice"></span>
-        /*this would apper after the button has been pressed and the results would show the Y*Y and the X for each Y*/-->
-        <!-- //var button = document.getElementId("Rollem'");
-                         button.onclick = function() {
-                             if()
-                        }; -->
-        <!-- //  var myList = document.getElementById("sideSelector");
-        //     var choiceSpan = document.getElementById("choice");
-        //     var sideChosen = myList.options[myList.selectedIndex].value;
-        //     var pressed = function(){
-        //         choiceSpan.innerHTML = "The results: " + sideChosen; 
-        //     };
-        //     var trigger = document.getElementById("rollButton");
+    <p id="demo"></p>
 
-        // function diceReturn(sides) {
-        //     // var results = prompt("The results")
-        //     let startNum = 1;
-        //     let randSides = Math.floor(Math.random() * (sides - startNum + 1)) + startNum;
-        //     return randSides;
-        //     var myRoll = diceReturn(#sideSelector);
-        // };
-        // var myRoll = diceReturn(#sideSelector);
-        // trigger.addEventListener("click", pressed) -->
-
-</body> 
+    <script>
+      function myFunction() {
+        var numSidesSelected = document.getElementById("sideSelector").value;
+        var resultString = "You rolled a ";
+        let startNum = 1;
+        let randSides =
+          Math.floor(Math.random() * (numSidesSelected - startNum + 1)) +
+          startNum;
+        var randResult = randSides;
+        if (numSidesSelected == 2) {
+          resultString = "The coin was ";
+          if (randSides == 1) {
+            randResult = "Heads";
+          } else {
+            randResult = "Tails";
+          }
+        }
+        document.getElementById("demo").innerHTML = resultString + randResult;
+      }
+    </script>
+  </body>
 </html>
