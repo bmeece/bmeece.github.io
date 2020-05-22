@@ -7,8 +7,7 @@
       body {
         background-color: rgb(85, 114, 129);
         color: whitesmoke;
-        font-family: "Open Sans", Cambria, Cochin, Georgia, "Times New Roman",
-          serif;
+        font-family: "Open Sans", Cambria, Cochin, Georgia, "Times New Roman", serif;
         text-align: center;
       }
       button {
@@ -21,159 +20,106 @@
   </head>
   <body>
     <h1>Counters for your Giant</h1>
-    <img
-      id="giantImg"
-      src="https://static2.mtgarena.pro/mtg/pict/crystalline-giant-IKO-234-art-mtga.png"
-      title="The giant in question"
-      alt="Crystalline Giant"
-    />
-    <!-- <img
-    id="zillaImg"
-    src="https://www.1999.co.jp/itbig69/10695008.jpg"
-    /> -->
+    <a href="https://scryfall.com/card/iko/361/crystalline-giant" target="_blank"
+      ><img
+        id="giantImg"
+        src="https://static2.mtgarena.pro/mtg/pict/crystalline-giant-IKO-234-art-mtga.png"
+        title="The giant in question"
+        alt="Crystalline Giant"
+    /></a>
     <h2>
-      <button
-        type="button"
-        onclick="collected(this)"
-        id="vigilanceButton"
-        class="hit"
-      >
+      <button type="button" onclick="collected(this)" id="vigilanceButton" class="hit">
         <img
           id="vigilanceImg"
-          src="https://vignette.wikia.nocookie.net/magicarena/images/6/61/Icon_Vigilance.png/revision/latest?cb=20180820183002"
+          src="https://vignette.wikia.nocookie.net/magicarena/images/6/61/Icon_Vigilance.png"
           title="Vigilance; no crack back now"
           alt="Vigilance Counter"
         />
       </button>
 
-      <button
-        type="button"
-        onclick="collected(this)"
-        id="flyingButton"
-        class="hit"
-      >
+      <button type="button" onclick="collected(this)" id="flyingButton" class="hit">
         <img
           id="flyingImg"
-          src="https://vignette.wikia.nocookie.net/magicarena/images/b/b0/Icon_Flying.png/revision/latest?cb=20180820182954"
+          src="https://vignette.wikia.nocookie.net/magicarena/images/b/b0/Icon_Flying.png"
           title="Flying; high in the sky"
           alt="Flying Counter"
         />
       </button>
 
-      <button
-        type="button"
-        onclick="collected(this)"
-        id="deathtouchButton"
-        class="hit"
-      >
+      <button type="button" onclick="collected(this)" id="deathtouchButton" class="hit">
         <img
           id="deathtouchImg"
-          src="https://vignette.wikia.nocookie.net/magicarena/images/d/db/Icon_Deathtouch.png/revision/latest?cb=20180820182952"
+          src="https://vignette.wikia.nocookie.net/magicarena/images/d/db/Icon_Deathtouch.png"
           title="Deathtouch; if only First Strike was here"
           alt="Deathtouch Counter"
         />
       </button>
 
-      <button
-        type="button"
-        onclick="collected(this)"
-        id="firstStrikeButton"
-        class="hit"
-      >
+      <button type="button" onclick="collected(this)" id="firstStrikeButton" class="hit">
         <img
           id="firstStrikeImg"
-          src="https://vignette.wikia.nocookie.net/magicarena/images/c/cf/Icon_First_Strike.png/revision/latest?cb=20180820182954"
+          src="https://vignette.wikia.nocookie.net/magicarena/images/c/cf/Icon_First_Strike.png"
           title="First Strike; it longs now for Deathtouch"
           alt="First Strike Counter"
           background-color="red"
         />
       </button>
 
-      <button
-        type="button"
-        onclick="collected(this)"
-        id="trampleButton"
-        class="hit"
-      >
+      <button type="button" onclick="collected(this)" id="trampleButton" class="hit">
         <img
           id="trampleImg"
-          src="https://vignette.wikia.nocookie.net/magicarena/images/c/c7/Icon_Trample.png/revision/latest?cb=20180820183001"
+          src="https://vignette.wikia.nocookie.net/magicarena/images/c/c7/Icon_Trample.png"
           title="Trample; nothing to stop you"
           alt="Trample Counter"
         />
       </button>
     </h2>
-    <h3>
-      <button
-        type="button"
-        onclick="collected(this)"
-        id="lifelinkButton"
-        class="hit"
-      >
+    <h2>
+      <button type="button" onclick="collected(this)" id="lifelinkButton" class="hit">
         <img
           id="lifelinkImg"
-          src="https://vignette.wikia.nocookie.net/magicarena/images/1/1f/Icon_Lifelink.png/revision/latest?cb=20180820182959"
+          src="https://vignette.wikia.nocookie.net/magicarena/images/1/1f/Icon_Lifelink.png"
           title="Lifelink; a lifesaver"
           alt="Lifelink Counter"
         />
       </button>
 
-      <button
-        type="button"
-        onclick="collected(this)"
-        id="hexproofButton"
-        class="hit"
-      >
+      <button type="button" onclick="collected(this)" id="hexproofButton" class="hit">
         <img
           id="hexproofImg"
-          src="https://vignette.wikia.nocookie.net/magicarena/images/2/2a/Icon_Hexproof.png/revision/latest?cb=20180820182955"
+          src="https://vignette.wikia.nocookie.net/magicarena/images/2/2a/Icon_Hexproof.png"
           title="Hexproof; the best to get!"
           alt="Hexproof Counter"
         />
       </button>
 
-      <button
-        type="button"
-        onclick="collected(this)"
-        id="menaceButton"
-        class="hit"
-      >
+      <button type="button" onclick="collected(this)" id="menaceButton" class="hit">
         <img
           id="menaceImg"
-          src="https://vignette.wikia.nocookie.net/magicarena/images/0/0c/Icon_Menace.png/revision/latest?cb=20180820183000"
+          src="https://vignette.wikia.nocookie.net/magicarena/images/0/0c/Icon_Menace.png"
           title="Menace; hater of twos"
           alt="Menace Counter"
         />
       </button>
 
-      <button
-        type="button"
-        onclick="collected(this)"
-        id="pluseOneButton"
-        class="hit"
-      >
+      <button type="button" onclick="collected(this)" id="pluseOneButton" class="hit">
         <img
           id="plusOneImg"
-          src="https://vignette.wikia.nocookie.net/magicarena/images/a/ad/Icon_Embalm.png/revision/latest?cb=20180823173614"
+          src="https://vignette.wikia.nocookie.net/magicarena/images/a/ad/Icon_Embalm.png"
           title="+1/+1; the classic"
           alt="+1/+1 Counter"
         />
       </button>
 
-      <button
-        type="button"
-        onclick="collected(this)"
-        id="reachButton"
-        class="hit"
-      >
+      <button type="button" onclick="collected(this)" id="reachButton" class="hit">
         <img
           id="reachImg"
-          src="https://vignette.wikia.nocookie.net/magicarena/images/5/5e/Icon_Reach.png/revision/latest?cb=20180820183000"
+          src="https://vignette.wikia.nocookie.net/magicarena/images/5/5e/Icon_Reach.png"
           title="Reach; worst to get!"
           alt="Reach Counter"
         />
       </button>
-    </h3>
+    </h2>
     <h4>
       <button type="button" onclick="rollChance()" id="roll">
         Get a Counter
@@ -184,8 +130,9 @@
     <!--Tell you what results you got this time. It would also switch on the corresponding counter button-->
     <h5><button type="button" onclick="reset()" id="again">Reset</button></h5>
     <!--Each of these are the counters that the crystallin giant can gain, they also can be clicked to say they already have them on it-->
+    <!-- - - - - - - - - - - - SCRIPTING STARTS HERE - - - - - - - - - - - -->
     <script>
-      var showResults = document.getElementById("rollResults");
+      const showResults = document.getElementById("rollResults");
 
       var counterSet = new Set([
         "Flying",
@@ -212,6 +159,7 @@
         Vigilance: "vigilanceButton",
         "+1/+1": "pluseOneButton",
       };
+
       var counterItemArray = {
         flyingButton: "Flying",
         firstStrikeButton: "First-Strike",
@@ -232,67 +180,6 @@
         showResults.innerHTML = "Click the Button ☝🏻 to Get a Counter!";
         resetButtons();
       }
-      
-      function collected(theElement) {
-        const btnElemId = theElement.id;
-        // console.log(btnElemId);
-        const btnClicked = document.getElementById(btnElemId);
-        const btnAlt = btnClicked
-          .getElementsByTagName("img")[0]
-          .getAttribute("alt");
-        btnClicked.classList.toggle("buttonSelected");
-        //console.log("button class is " + btnClicked.className);
-        //counterItemArray
-        let itemName = counterItemArray[btnElemId];
-        console.log(itemName);
-        if (btnClicked.classList.contains("buttonSelected")) {
-          addOrDeleteSetItem(counterSet, itemName, "delete");
-          showResults.innerHTML = "You gave it the " + btnAlt;
-        } else {
-          addOrDeleteSetItem(counterSet, itemName, "add");
-          showResults.innerHTML = "You took the " + btnAlt + " away";
-        }
-      }
-
-      function addOrDeleteSetItem(theSet, theItem, addOrDelete){
-        if (addOrDelete == "add") {
-          theSet.add(theItem);          
-        }
-        else if(addOrDelete == "delete") {
-          theSet.delete(theItem);
-        }
-      } 
-
-      //when clicked, activates both the buttonSelected and pickedItem
-
-      function grabAndDeleteRandomSetElem(aSet) {
-        let sizeOfSet = aSet.size;
-        if (sizeOfSet > 0) {
-          //console.log("Size of set: " + sizeOfSet);
-          let aSetAsArray = [...aSet.keys()];
-          //console.log("Array: " + aSetAsArray);
-          const startNum = 0;
-          let randItem =
-            Math.floor(Math.random() * (sizeOfSet - startNum)) + startNum;
-          //console.log("Rand Item Number: " +  randItem)
-          let pickedItem = aSetAsArray[randItem];
-          //console.log("I picked: " +  pickedItem);
-          aSet.delete(pickedItem);
-          return pickedItem;
-        } else {
-          //console.log("we should be done");
-          return "You're done!";
-        }
-      }
-
-      function selectRandomFromSet(theSet) {
-        // 1. Grab a random item from the counterSet set.
-        var pick = grabAndDeleteRandomSetElem(theSet);
-        // 2. Remove said random item from the counterSet set.
-        // 3. Make icon toggled "on"
-        // return
-        return pick;
-      }
 
       function resetButtons() {
         let allButtons = document.querySelectorAll(".buttonSelected");
@@ -301,34 +188,64 @@
         }
       }
 
+      function collected(theElement) {
+        const btnElemId = theElement.id;
+        const btnClicked = document.getElementById(btnElemId);
+        const btnAlt = btnClicked.getElementsByTagName("img")[0].getAttribute("alt");
+        btnClicked.classList.toggle("buttonSelected");
+        const itemName = counterItemArray[btnElemId];
+        if (btnClicked.classList.contains("buttonSelected")) {
+          addOrDeleteSetItem(counterSet, itemName, "delete");
+          const sizeOfSet = counterSet.size;
+          if (sizeOfSet > 0) {
+            showResults.innerHTML = "You gave it the " + btnAlt;
+          } else {
+            showResults.innerHTML =
+              "You gave it the " + btnAlt + ", which was the last counter available!";
+          }
+        } else {
+          addOrDeleteSetItem(counterSet, itemName, "add");
+          showResults.innerHTML = "You took the " + btnAlt + " away";
+        }
+      }
+
+      function addOrDeleteSetItem(theSet, theItem, addOrDelete) {
+        if (addOrDelete == "add") {
+          theSet.add(theItem);
+        } else if (addOrDelete == "delete") {
+          theSet.delete(theItem);
+        }
+      }
+
+      function grabAndDeleteRandomSetElem(aSet) {
+        let sizeOfSet = aSet.size;
+        if (sizeOfSet > 0) {
+          let aSetAsArray = [...aSet.keys()];
+          const startNum = 0;
+          let randItem = Math.floor(Math.random() * (sizeOfSet - startNum)) + startNum;
+          let pickedItem = aSetAsArray[randItem];
+          aSet.delete(pickedItem);
+          return pickedItem;
+        } else {
+          return "You're done!";
+        }
+      }
+
       function rollChance() {
         let sizeOfSet = counterSet.size;
         if (sizeOfSet > 0) {
-          let theSelection = selectRandomFromSet(counterSet);
-          let selectionCountNow = counterSet.size;
-          counterButtonArray[theSelection];
-          var selectedButton = document.getElementById(
-            counterButtonArray[theSelection]
-          );
-          document
-            .getElementById(counterButtonArray[theSelection])
-            .classList.add("buttonSelected");
-          var myTest = document.getElementById(
-            counterButtonArray[theSelection]
-          );
-          //console.log(myTest);
-          selectedButton.className = "buttonSelected";
-          selectedButton.classList.add("buttonSelected");
-          // if selectionCountNow > 0 then we tell them what they got
+          const theSelection = grabAndDeleteRandomSetElem(counterSet);
+          const selectionCountNow = counterSet.size;
+          var selectedButton = document.getElementById(counterButtonArray[theSelection]);
+          document.getElementById(counterButtonArray[theSelection]).classList.add("buttonSelected");
           if (selectionCountNow > 0) {
             showResults.innerHTML = "You got the " + theSelection + " Counter";
           } else {
-            showResults.innerHTML =
-              "And the last one is the " + theSelection + " Counter!";
+            showResults.innerHTML = "And the last one is the " + theSelection + " Counter!";
           }
         } else {
           showResults.innerHTML =
-            "Thats all of them! Click the Reset button 👇🏻 for your next Giant";
+            "That's all of them! Click the 👇🏻 Reset button for your next Giant";
         }
       }
     </script>
